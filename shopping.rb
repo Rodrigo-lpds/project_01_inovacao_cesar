@@ -41,6 +41,10 @@ def product_total_value(product)
   product["price"] * quantity
 end
 
+def update_subtotal(value, subtotal = 0)
+  subtotal + value
+end
+
 def to_currency(value)
   "R$ " << value.to_s.tr('.', ',')
 end
