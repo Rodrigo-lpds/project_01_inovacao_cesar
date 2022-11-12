@@ -6,6 +6,11 @@ module MenuOptions
 	EXIT = 2
   end
 
+def back_to_menu?
+	puts "Digite 0 para voltar ao menu inicial"
+	gets.chomp.to_i == 0
+end
+
 def menu
 	subtotal = 0
 
@@ -15,8 +20,9 @@ def menu
 		subtotal 			= update_subtotal(product_value, subtotal)
 
 		puts "Subtotal: #{to_currency(subtotal)}"
+
+		redo unless back_to_menu?
 	end
 end
-
 
 menu()
