@@ -7,3 +7,18 @@ def products
 	
 	products
 end
+
+def keep_shopping?
+  puts "Selecione a opção desejada:"
+  puts "[1] Comprar"
+  puts "[2] Sair"
+
+  option = gets.chomp.to_i
+
+  if option == MenuOptions::SHOPPING
+    true
+  elsif option == MenuOptions::EXIT
+    puts "Até breve!!!"
+    false
+  end
+end
