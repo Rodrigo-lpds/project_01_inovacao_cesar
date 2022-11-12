@@ -34,6 +34,13 @@ def select_product
   products[selected_product_id]
 end
 
+def product_total_value(product)
+  puts "Digite a quantidade desejada:"
+  quantity = gets.chomp.to_i
+
+  product["price"] * quantity
+end
+
 def to_currency(value)
   "R$ " << value.to_s.tr('.', ',')
 end
