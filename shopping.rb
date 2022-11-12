@@ -22,3 +22,18 @@ def keep_shopping?
     false
   end
 end
+
+def select_product
+  puts "Selecione a opção desejada:"
+  
+  products.each do |id, product_details|
+    puts "[#{id}] #{product_details["name"]}: #{to_currency(product_details["price"])}"
+  end
+  selected_product_id = gets.chomp
+
+  products[selected_product_id]
+end
+
+def to_currency(value)
+  "R$ " << value.to_s.tr('.', ',')
+end
